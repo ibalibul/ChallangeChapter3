@@ -49,7 +49,7 @@ class FragmentAbjad : Fragment() {
             ListAbjad("S"),
             ListAbjad("T"),
             ListAbjad("U"),
-            ListAbjad("F"),
+            ListAbjad("V"),
             ListAbjad("W"),
             ListAbjad("X"),
             ListAbjad("Y"),
