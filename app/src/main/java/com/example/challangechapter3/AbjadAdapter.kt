@@ -16,11 +16,27 @@ class AbjadAdapter (val listAbjad : ArrayList<ListAbjad> ) : RecyclerView.Adapte
 
     var onClik : ((ListAbjad) -> Unit)? = null
 
+    lateinit var listener: onItemClikListener
+
+
+    interface onItemClikListener {
+        fun onClik (abjad : String)
+    }
+
+    fun setOnkliklistener (listener : onItemClikListener) {
+        this.listener = listener
+    }
+
 //    ambil id dari layout
-    class ViewHolder (view : View) : RecyclerView.ViewHolder(view){
-        var namaAbjad = view.findViewById<TextView>(R.id.txtHuruf)
+     inner class ViewHolder (view : View) : RecyclerView.ViewHolder(view){
+        var namaAbjad = view.findViewById<Button>(R.id.txtHuruf)
         var card = view.findViewById<CardView>(R.id.cardView)
 
+    init {
+        view.txtHuruf.setOnClickListener{
+            listener.onClik(listAbjad[absoluteAdapterPosition].huruf)
+        }
+    }
 
     }
 
@@ -34,9 +50,9 @@ class AbjadAdapter (val listAbjad : ArrayList<ListAbjad> ) : RecyclerView.Adapte
 //    Untuk Set Data ke Layout
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.namaAbjad.text = listAbjad[position].huruf
-        holder.card.setOnClickListener{
-            onClik?.invoke(listAbjad[position])
-        }
+//        holder.card.setOnClickListener{
+//            onClik?.invoke(listAbjad[position])
+//        }
     }
 
 //    Ada beberapa item yang akan muncul di RecyclerView

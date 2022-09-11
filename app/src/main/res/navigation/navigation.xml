@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentAbjad">
+
+    <fragment
+        android:id="@+id/fragmentAbjad"
+        android:name="com.example.challangechapter3.FragmentAbjad"
+        android:label="fragment_abjad"
+        tools:layout="@layout/fragment_abjad" >
+        <action
+            android:id="@+id/action_fragmentAbjad_to_fragmentDetailA"
+            app:destination="@id/fragmentDetailA" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailA"
+        android:name="com.example.challangechapter3.FragmentDetailA"
+        android:label="fragment_detail_a"
+        tools:layout="@layout/fragment_detail_a" />
+</navigation>

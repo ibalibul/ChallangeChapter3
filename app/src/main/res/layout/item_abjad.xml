@@ -3,7 +3,8 @@
     android:id="@+id/cardView"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="10dp"
+    android:padding="12dp"
+    android:layout_margin="10dp"
     android:layout_height="wrap_content">
 
     <Button
